@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation | Glamour Cosmetics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .confirmation-icon {
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation (same as index.html) -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-pink-400">Glamour Cosmetics</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">Home</a>
+                    <a href="products.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">Products</a>
+                    <a href="cart.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="ml-1">0</span>
+                    </a>
+                    <a href="favorites.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Confirmation Section -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-lg shadow-md p-8 max-w-2xl mx-auto text-center">
+            <div class="confirmation-icon text-green-500 text-6xl mb-6">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h1 class="text-3xl font-bold mb-4">Payment Successful!</h1>
+            <p class="text-gray-600 mb-6">Thank you for your purchase. Your order has been confirmed and will be processed shortly.</p>
+            
+            <div class="bg-gray-50 rounded-lg p-6 mb-8 text-left">
+                <h2 class="text-xl font-bold mb-4">Order Details</h2>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Order Number</p>
+                        <p class="font-medium">#GLM-<span id="order-number">${Math.floor(100000 + Math.random() * 900000)}</span></p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Date</p>
+                        <p class="font-medium">${new Date().toLocaleDateString()}</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Payment Method</p>
+                        <p class="font-medium" id="payment-method">Credit Card</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Total Amount</p>
+                        <p class="font-medium text-pink-400" id="order-total">$0.00</p>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-200 pt-4">
+                    <h3 class="font-bold mb-2">Shipping Address</h3>
+                    <p id="shipping-address">Loading address...</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="products.html" class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                    Continue Shopping
+                </a>
+                <a href="index.html" class="border border-pink-400 text-pink-400 hover:bg-pink-50 font-bold py-3 px-6 rounded-full transition duration-300">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Glamour Cosmetics</h3>
+                    <p>Premium beauty products for everyone. Cruelty-free and vegan options available.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="products.html" class="hover:text-pink-400">Shop All</a></li>
+                        <li><a href="#" class="hover:text-pink-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Glamour Cosmetics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Load order details from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            // Clear cart after successful payment
+            localStorage.setItem('cart', JSON.stringify([]));
+            updateCartCount();
+
+            // Set order total
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let subtotal = 0;
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+            });
+            const tax = subtotal * 0.1; // 10% tax
+            const total = subtotal + tax;
+            document.getElementById('order-total').textContent = `$${total.toFixed(2)}`;
+
+            // Set payment method (would be from form submission in real app)
+            const paymentMethod = localStorage.getItem('paymentMethod') || 'Credit Card';
+            document.getElementById('payment-method').textContent = paymentMethod;
+
+            // Set shipping address (would be from form submission in real app)
+            const shippingAddress = localStorage.getItem('shippingAddress') || 
+                '123 Main St, Anytown, CA 12345, United States';
+            document.getElementById('shipping-address').textContent = shippingAddress;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Glamour Cosmetics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .zoom-image {
+            transition: transform 0.3s;
+            cursor: zoom-in;
+        }
+        .zoom-image:hover {
+            transform: scale(1.5);
+        }
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation (same as index.html) -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-pink-400">Glamour Cosmetics</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">Home</a>
+                    <a href="products.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">Products</a>
+                    <a href="cart.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="ml-1">0</span>
+                    </a>
+                    <a href="favorites.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Product Images -->
+            <div>
+                <div class="mb-4 rounded-lg overflow-hidden">
+                    <img id="main-image" src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg" 
+                         alt="Matte Lipstick" class="w-full h-96 object-cover zoom-image">
+                </div>
+                <div class="grid grid-cols-4 gap-2">
+                    <div class="border rounded-md p-1 cursor-pointer">
+                        <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg" 
+                             alt="Matte Lipstick" class="w-full h-20 object-cover" 
+                             onclick="changeMainImage(this.src)">
+                    </div>
+                    <div class="border rounded-md p-1 cursor-pointer">
+                        <img src="https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg" 
+                             alt="Matte Lipstick" class="w-full h-20 object-cover" 
+                             onclick="changeMainImage(this.src)">
+                    </div>
+                    <div class="border rounded-md p-1 cursor-pointer">
+                        <img src="https://images.pexels.com/photos/3998009/pexels-photo-3998009.jpeg" 
+                             alt="Matte Lipstick" class="w-full h-20 object-cover" 
+                             onclick="changeMainImage(this.src)">
+                    </div>
+                    <div class="border rounded-md p-1 cursor-pointer">
+                        <img src="https://images.pexels.com/photos/4202325/pexels-photo-4202325.jpeg" 
+                             alt="Matte Lipstick" class="w-full h-20 object-cover" 
+                             onclick="changeMainImage(this.src)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div>
+                <h1 class="text-3xl font-bold mb-2">Matte Lipstick</h1>
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-400 mr-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="text-gray-600">(48 reviews)</span>
+                </div>
+                <p class="text-2xl font-bold text-pink-400 mb-6">$24.99</p>
+                
+                <div class="mb-6">
+                    <h2 class="text-lg font-semibold mb-2">Description</h2>
+                    <p class="text-gray-700">
+                        Our long-lasting matte lipstick provides rich, vibrant color with a velvety finish. 
+                        Formulated with nourishing ingredients like vitamin E and avocado oil to keep lips 
+                        hydrated without compromising the matte look. Available in 12 stunning shades.
+                    </p>
+                </div>
+
+                <div class="mb-6">
+                    <h2 class="text-lg font-semibold mb-2">Key Features</h2>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                        <li>Long-wearing formula (up to 8 hours)</li>
+                        <li>Transfer-resistant</li>
+                        <li>Hydrating and comfortable</li>
+                        <li>Cruelty-free and vegan</li>
+                        <li>Paraben-free</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h2 class="text-lg font-semibold mb-2">Shade</h2>
+                    <div class="flex space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-red-500 border-2 border-white shadow"></div>
+                        <div class="w-8 h-8 rounded-full bg-pink-500 border-2 border-white shadow"></div>
+                        <div class="w-8 h-8 rounded-full bg-purple-500 border-2 border-white shadow"></div>
+                        <div class="w-8 h-8 rounded-full bg-brown-500 border-2 border-white shadow"></div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h2 class="text-lg font-semibold mb-2">Quantity</h2>
+                    <div class="flex items-center">
+                        <button class="quantity-btn border border-gray-300 rounded-l-md" onclick="updateQuantity(-1)">-</button>
+                        <input type="number" id="quantity" value="1" min="1" class="w-16 text-center border-t border-b border-gray-300 py-1">
+                        <button class="quantity-btn border border-gray-300 rounded-r-md" onclick="updateQuantity(1)">+</button>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4">
+                    <button id="add-to-cart" class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                        Add to Cart
+                    </button>
+                    <button id="add-to-favorites" class="border border-pink-400 text-pink-400 hover:bg-pink-50 font-bold py-3 px-4 rounded-full transition duration-300">
+                        <i class="far fa-heart mr-2"></i> Favorite
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Tabs -->
+        <div class="mt-16">
+            <div class="border-b border-gray-200">
+                <nav class="flex space-x-8">
+                    <button class="tab-btn py-4 px-1 border-b-2 font-medium text-sm border-pink-400 text-pink-400" data-tab="details">
+                        Product Details
+                    </button>
+                    <button class="tab-btn py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="ingredients">
+                        Ingredients
+                    </button>
+                    <button class="tab-btn py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="reviews">
+                        Reviews
+                    </button>
+                </nav>
+            </div>
+
+            <div id="details" class="tab-content py-6">
+                <h3 class="text-lg font-semibold mb-4">Detailed Description</h3>
+                <p class="text-gray-700 mb-4">
+                    Our matte lipstick is designed for those who love bold, long-lasting color without the drying effect 
+                    of traditional matte formulas. The creamy texture glides on smoothly and sets to a comfortable matte 
+                    finish that won't feather or bleed.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    The innovative formula contains nourishing ingredients that help to condition lips while providing 
+                    intense color payoff. The angled bullet allows for precise application, making it easy to achieve 
+                    the perfect pout.
+                </p>
+                <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                    <li>Net Weight: 3.5g / 0.12oz</li>
+                    <li>Made in Italy</li>
+                    <li>Packaging: Recyclable</li>
+                </ul>
+            </div>
+
+            <div id="ingredients" class="tab-content py-6 hidden">
+                <h3 class="text-lg font-semibold mb-4">Full Ingredients List</h3>
+                <p class="text-gray-700 mb-4">
+                    Ricinus Communis (Castor) Seed Oil, Cera Alba (Beeswax), Euphorbia Cerifera (Candelilla) Wax, 
+                    Copernicia Cerifera (Carnauba) Wax, Tocopheryl Acetate (Vitamin E), Persea Gratissima (Avocado) Oil, 
+                    Mica, Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI 77499), Red 7 Lake (CI 15850).
+                </p>
+                <p class="text-gray-700">
+                    <span class="font-semibold">Vegan Note:</span> This product does not contain any animal-derived ingredients.
+                </p>
+            </div>
+
+            <div id="reviews" class="tab-content py-6 hidden">
+                <h3 class="text-lg font-semibold mb-4">Customer Reviews</h3>
+                <div class="space-y-6">
+                    <div class="border-b border-gray-200 pb-6">
+                        <div class="flex items-center mb-2">
+                            <div class="text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="font-medium">Sarah J.</span>
+                        </div>
+                        <p class="text-gray-700 mb-2">
+                            "This is my new favorite lipstick! The color is gorgeous and it lasts all day without drying out my lips."
+                        </p>
+                        <p class="text-sm text-gray-500">Posted on March 15, 2023</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-6">
+                        <div class="flex items-center mb-2">
+                            <div class="text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="font-medium">Alex M.</span>
+                        </div>
+                        <p class="text-gray-700 mb-2">
+                            "Great color payoff and comfortable to wear. Only wish it came in more neutral shades."
+                        </p>
+                        <p class="text-sm text-gray-500">Posted on February 28, 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-8">You May Also Like</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Related Product 1 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg" alt="Eyeshadow Palette" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">Eyeshadow Palette</h3>
+                    <div class="flex items-center mt-1">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 ml-2">(112)</span>
+                    </div>
+                    <p class="text-pink-400 font-bold mt-2">$45.99</p>
+                    <a href="product-detail.html" class="mt-4 inline-block bg-pink-400 hover:bg-pink-500 text-white py-2 px-4 rounded-full text-sm transition duration-300">
+                        View Details
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Related Product 2 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="https://images.pexels.com/photos/3998009/pexels-photo-3998009.jpeg" alt="Liquid Foundation" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">Liquid Foundation</h3>
+                    <div class="flex items-center mt-1">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 ml-2">(36)</span>
+                    </div>
+                    <p class="text-pink-400 font-bold mt-2">$32.99</p>
+                    <a href="product-detail.html" class="mt-4 inline-block bg-pink-400 hover:bg-pink-500 text-white py-2 px-4 rounded-full text-sm transition duration-300">
+                        View Details
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Related Product 3 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="https://images.pexels.com/photos/4202325/pexels-photo-4202325.jpeg" alt="Moisturizing Cream" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">Moisturizing Cream</h3>
+                    <div class="flex items-center mt-1">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-600 ml-2">(87)</span>
+                    </div>
+                    <p class="text-pink-400 font-bold mt-2">$28.99</p>
+                    <a href="product-detail.html" class="mt-4 inline-block bg-pink-400 hover:bg-pink-500 text-white py-2 px-4 rounded-full text-sm transition duration-300">
+                        View Details
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Related Product 4 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg" alt="Blush Palette" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">Blush Palette</h3>
+                    <div class="flex items-center mt-1">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 ml-2">(56)</span>
+                    </div>
+                    <p class="text-pink-400 font-bold mt-2">$29.99</p>
+                    <a href="product-detail.html" class="mt-4 inline-block bg-pink-400 hover:bg-pink-500 text-white py-2 px-4 rounded-full text-sm transition duration-300">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Glamour Cosmetics</h3>
+                    <p>Premium beauty products for everyone. Cruelty-free and vegan options available.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="products.html" class="hover:text-pink-400">Shop All</a></li>
+                        <li><a href="#" class="hover:text-pink-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Glamour Cosmetics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Change main product image
+        function changeMainImage(src) {
+            document.getElementById('main-image').src = src;
+        }
+
+        // Update quantity
+        function updateQuantity(change) {
+            const quantityInput = document.getElementById('quantity');
+            let newValue = parseInt(quantityInput.value) + change;
+            if (newValue < 1) newValue = 1;
+            quantityInput.value = newValue;
+        }
+
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active tab button
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('border-pink-400', 'text-pink-400');
+                    btn.classList.add('border-transparent', 'text-gray-500');
+                });
+                this.classList.remove('border-transparent', 'text-gray-500');
+                this.classList.add('border-pink-400', 'text-pink-400');
+
+                // Show selected tab content
+                const tabId = this.getAttribute('data-tab');
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                document.getElementById(tabId).classList.remove('hidden');
+            });
+        });
+
+        // Add to cart button
+        document.getElementById('add-to-cart').addEventListener('click', function() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const productId = 1; // This would be dynamic in a real app
+            
+            // Get current cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Check if product already in cart
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: "Matte Lipstick",
+                    price: 24.99,
+                    image: "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg",
+                    quantity: quantity
+                });
+            }
+            
+            // Save back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Show success message
+            showToast('Item added to cart!');
+        });
+
+        // Add to favorites button
+        document.getElementById('add-to-favorites').addEventListener('click', function() {
+            const productId = 1; // This would be dynamic in a real app
+            const button = this;
+            
+            // Get current favorites from localStorage
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            
+            // Check if product already in favorites
+            const isFavorite = favorites.includes(productId);
+            if (isFavorite) {
+                // Remove from favorites
+                favorites = favorites.filter(id => id !== productId);
+                button.innerHTML = '<i class="far fa-heart mr-2"></i> Favorite';
+                showToast('Removed from favorites');
+            } else {
+                // Add to favorites
+                favorites.push(productId);
+                button.innerHTML = '<i class="fas fa-heart mr-2"></i> Favorited';
+                showToast('Added to favorites!');
+            }
+            
+            // Save back to localStorage
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        });
+
+        // Initialize favorite button state
+        document.addEventListener('DOMContentLoaded', function() {
+            const productId = 1; // This would be dynamic in a real app
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            
+            if (favorites.includes(productId)) {
+                document.getElementById('add-to-favorites').innerHTML = '<i class="fas fa-heart mr-2"></i> Favorited';
+            }
+            
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>

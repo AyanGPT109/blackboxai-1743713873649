@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Glamour Cosmetics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .active-category {
+            background-color: #f4c2c2;
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation (same as index.html) -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-pink-400">Glamour Cosmetics</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">Home</a>
+                    <a href="products.html" class="text-pink-400 px-3 py-2">Products</a>
+                    <a href="cart.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="ml-1">0</span>
+                    </a>
+                    <a href="favorites.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Listing Section -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold mb-8">Our Products</h1>
+        
+        <!-- Category Filters -->
+        <div class="mb-8 flex flex-wrap gap-2">
+            <button class="category-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-pink-50 active-category" data-category="all">All</button>
+            <button class="category-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-pink-50" data-category="skincare">Skincare</button>
+            <button class="category-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-pink-50" data-category="makeup">Makeup</button>
+            <button class="category-filter px-4 py-2 rounded-full border border-gray-300 hover:bg-pink-50" data-category="haircare">Haircare</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="product-grid">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-12 flex justify-center">
+            <nav class="flex items-center space-x-2">
+                <button class="px-3 py-1 rounded border border-gray-300 hover:bg-pink-50 disabled:opacity-50" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="px-3 py-1 rounded border border-pink-400 bg-pink-400 text-white">1</button>
+                <button class="px-3 py-1 rounded border border-gray-300 hover:bg-pink-50">2</button>
+                <button class="px-3 py-1 rounded border border-gray-300 hover:bg-pink-50">3</button>
+                <button class="px-3 py-1 rounded border border-gray-300 hover:bg-pink-50">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Glamour Cosmetics</h3>
+                    <p>Premium beauty products for everyone. Cruelty-free and vegan options available.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="products.html" class="hover:text-pink-400">Shop All</a></li>
+                        <li><a href="#" class="hover:text-pink-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Glamour Cosmetics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Mock product data
+        const products = [
+            {
+                id: 1,
+                name: "Matte Lipstick",
+                price: 24.99,
+                image: "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg",
+                category: "makeup",
+                rating: 4.5,
+                reviews: 48
+            },
+            {
+                id: 2,
+                name: "Liquid Foundation",
+                price: 32.99,
+                image: "https://images.pexels.com/photos/3998009/pexels-photo-3998009.jpeg",
+                category: "makeup",
+                rating: 4,
+                reviews: 36
+            },
+            {
+                id: 3,
+                name: "Eyeshadow Palette",
+                price: 45.99,
+                image: "https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg",
+                category: "makeup",
+                rating: 5,
+                reviews: 112
+            },
+            {
+                id: 4,
+                name: "Moisturizing Cream",
+                price: 28.99,
+                image: "https://images.pexels.com/photos/4202325/pexels-photo-4202325.jpeg",
+                category: "skincare",
+                rating: 4.5,
+                reviews: 87
+            },
+            {
+                id: 5,
+                name: "Facial Cleanser",
+                price: 19.99,
+                image: "https://images.pexels.com/photos/4202325/pexels-photo-4202325.jpeg",
+                category: "skincare",
+                rating: 4,
+                reviews: 65
+            },
+            {
+                id: 6,
+                name: "Shampoo & Conditioner Set",
+                price: 34.99,
+                image: "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg",
+                category: "haircare",
+                rating: 4.5,
+                reviews: 42
+            },
+            {
+                id: 7,
+                name: "Hair Mask",
+                price: 26.99,
+                image: "https://images.pexels.com/photos/3998009/pexels-photo-3998009.jpeg",
+                category: "haircare",
+                rating: 4,
+                reviews: 38
+            },
+            {
+                id: 8,
+                name: "Blush Palette",
+                price: 29.99,
+                image: "https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg",
+                category: "makeup",
+                rating: 4.5,
+                reviews: 56
+            }
+        ];
+
+        // Render products
+        function renderProducts(productsToRender) {
+            const productGrid = document.getElementById('product-grid');
+            productGrid.innerHTML = '';
+
+            productsToRender.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300';
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">${product.name}</h3>
+                        <div class="flex items-center mt-1">
+                            <div class="text-yellow-400">
+                                ${'<i class="fas fa-star"></i>'.repeat(Math.floor(product.rating))}
+                                ${product.rating % 1 ? '<i class="fas fa-star-half-alt"></i>' : ''}
+                                ${'<i class="far fa-star"></i>'.repeat(5 - Math.ceil(product.rating))}
+                            </div>
+                            <span class="text-gray-600 ml-2">(${product.reviews})</span>
+                        </div>
+                        <p class="text-pink-400 font-bold mt-2">$${product.price.toFixed(2)}</p>
+                        <div class="mt-4 flex space-x-2">
+                            <button class="add-to-cart bg-pink-400 hover:bg-pink-500 text-white py-2 px-4 rounded-full text-sm transition duration-300" data-id="${product.id}">
+                                Add to Cart
+                            </button>
+                            <button class="add-to-favorites border border-pink-400 text-pink-400 hover:bg-pink-50 py-2 px-4 rounded-full text-sm transition duration-300" data-id="${product.id}">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                productGrid.appendChild(productCard);
+            });
+
+            // Add event listeners to new buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    addToCart(productId);
+                });
+            });
+
+            document.querySelectorAll('.add-to-favorites').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    addToFavorites(productId);
+                });
+            });
+        }
+
+        // Filter products by category
+        document.querySelectorAll('.category-filter').forEach(button => {
+            button.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                
+                // Update active category button
+                document.querySelectorAll('.category-filter').forEach(btn => {
+                    btn.classList.remove('active-category');
+                });
+                this.classList.add('active-category');
+
+                // Filter products
+                if (category === 'all') {
+                    renderProducts(products);
+                } else {
+                    const filteredProducts = products.filter(product => product.category === category);
+                    renderProducts(filteredProducts);
+                }
+            });
+        });
+
+        // Initial render
+        renderProducts(products);
+    </script>
+</body>
+</html>

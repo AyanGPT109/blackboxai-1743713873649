@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Cosmetics | Premium Beauty Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero-bg {
+            background-image: url('https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-pink-400">Glamour Cosmetics</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">Home</a>
+                    <a href="products.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">Products</a>
+                    <a href="cart.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="ml-1">0</span>
+                    </a>
+                    <a href="favorites.html" class="text-gray-700 hover:text-pink-400 px-3 py-2">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-96 flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <h1 class="text-4xl font-bold mb-4">Discover Your Beauty</h1>
+            <p class="text-xl mb-8">Premium cosmetics for every skin type</p>
+            <a href="products.html" class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                Shop Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Featured Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg" alt="Lipstick" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">Matte Lipstick</h3>
+                    <div class="flex items-center mt-1">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-600 ml-2">(48)</span>
+                    </div>
+                    <p class="text-pink-400 font-bold mt-2">$24.99</p>
+                    <div class="mt-4 flex space-x-2">
+                        <button class="bg-pink-400 hover:bg-pink-500 text-white py-2 px-4 rounded-full text-sm transition duration-300">
+                            Add to Cart
+                        </button>
+                        <button class="border border-pink-400 text-pink-400 hover:bg-pink-50 py-2 px-4 rounded-full text-sm transition duration-300">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="https://images.pexels.com/photos/3998009/pexels-photo-3998009.jpeg" alt="Foundation" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">Liquid Foundation</h3>
+                    <div class="flex items-center mt-1">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 ml-2">(36)</span>
+                    </div>
+                    <p class="text-pink-400 font-bold mt-2">$32.99</p>
+                    <div class="mt-4 flex space-x-2">
+                        <button class="bg-pink-400 hover:bg-pink-500 text-white py-2 px-4 rounded-full text-sm transition duration-300">
+                            Add to Cart
+                        </button>
+                        <button class="border border-pink-400 text-pink-400 hover:bg-pink-50 py-2 px-4 rounded-full text-sm transition duration-300">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg" alt="Eyeshadow" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg">Eyeshadow Palette</h3>
+                    <div class="flex items-center mt-1">
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 ml-2">(112)</span>
+                    </div>
+                    <p class="text-pink-400 font-bold mt-2">$45.99</p>
+                    <div class="mt-4 flex space-x-2">
+                        <button class="bg-pink-400 hover:bg-pink-500 text-white py-2 px-4 rounded-full text-sm transition duration-300">
+                            Add to Cart
+                        </button>
+                        <button class="border border-pink-400 text-pink-400 hover:bg-pink-50 py-2 px-4 rounded-full text-sm transition duration-300">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Glamour Cosmetics</h3>
+                    <p>Premium beauty products for everyone. Cruelty-free and vegan options available.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="products.html" class="hover:text-pink-400">Shop All</a></li>
+                        <li><a href="#" class="hover:text-pink-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-pink-400"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Glamour Cosmetics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
